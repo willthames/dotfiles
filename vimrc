@@ -20,3 +20,7 @@ autocmd BufReadPost *
 \ exe "normal g'\"" |
 \ endif |
 \ endif
+
+" turn backups off
+set nobackup
+set nowritebackup
