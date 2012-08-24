@@ -3,8 +3,8 @@ syntax on
 filetype plugin on
 set ruler
 
-set smartindent
-set tabstop=4
+set autoindent
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 
@@ -24,3 +24,9 @@ autocmd BufReadPost *
 " turn backups off
 set nobackup
 set nowritebackup
+
+" write root owned file when not root
+if has('unix')
+    cmap w!! %!sudo tee > /dev/null %
+endif
+
