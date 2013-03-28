@@ -1,12 +1,7 @@
 set history=100
 syntax on
-filetype plugin on
+filetype plugin indent on
 set ruler
-
-set autoindent
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 
 noremap <Up> <nop>
 noremap <Down> <nop>
@@ -30,3 +25,10 @@ if has('unix')
     cmap w!! %!sudo tee > /dev/null %
 endif
 
+" set tabs to default to 2 spaces except for python 
+set autoindent
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+autocmd FileType python set shiftwidth=4
