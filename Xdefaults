@@ -1,0 +1,6 @@
+URxvt*font: xft:terminus:pixelsize=14
+URxvt*boldfont: xft:terminus:bold:pixelsize=14
+URxvt*foreground: white
+URxvt*background: Black
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
