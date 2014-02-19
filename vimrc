@@ -1,7 +1,14 @@
 set history=100
 syntax on
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 set ruler
+
+set autoindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 noremap <Up> <nop>
 noremap <Down> <nop>
@@ -25,10 +32,10 @@ if has('unix')
     cmap w!! %!sudo tee > /dev/null %
 endif
 
-" set tabs to default to 2 spaces except for python 
-set autoindent
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-
 autocmd FileType python set shiftwidth=4
+
+highlight ExtraWhiteSpace ctermbg=red guibg=red
+match ExtraWhiteSpace /\t/
+autocmd InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
+
