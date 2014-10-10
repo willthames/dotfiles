@@ -1,3 +1,9 @@
 [user]
-  name = willthames
+  name = Will Thames
   email = will@thames.id.au
+
+[alias]
+  ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
+  stpr = "!f() { git fetch $1 refs/pull-requests/$2/from:pr-$2; }; f"
+  caa = "commit --amend --all --no-edit"
+  alias = "! git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /' | sort"
