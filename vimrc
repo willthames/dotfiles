@@ -1,4 +1,20 @@
+" NB: https://github.com/gmarik/Vundle.vim/issues/167
+" You may need git config --global core.editor $(which vim)
+
+" vundle relies on
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 set history=100
+set nocompatible
+" filetype must be set off before loading bundles
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'wting/rust.vim'
+
+" filetype can be turned on after bundles
+filetype on
 syntax on
 filetype plugin on
 filetype indent on
@@ -38,4 +54,3 @@ highlight ExtraWhiteSpace ctermbg=red guibg=red
 match ExtraWhiteSpace /\t/
 autocmd InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
-
