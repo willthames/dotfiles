@@ -1,1 +1,5 @@
+# https://bugzilla.redhat.com/show_bug.cgi?id=878428
+git_completions=/usr/share/git-core/contrib/completion/git-prompt.sh
+[ -f $git_completions ] && . $git_completions
+
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
