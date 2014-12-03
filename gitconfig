@@ -3,7 +3,14 @@
   email = will@thames.id.au
 
 [alias]
-  ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
-  caa = "commit --amend --all --no-edit"
   alias = "! git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /' | sort"
+  bp = "checkout -"
+  caa = "commit --amend --all --no-edit"
+  cb = "checkout -b"
+  co = "checkout"
+  follow = "!f() { remote=`git config --get remote.origin.url | sed 's/:[^/]*/:'$1'/'`; git remote add $1 $remote; }; f"
+  ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
+  ra = "rebase --abort"
   rc = "rebase --continue"
+  root = !pwd
+  stpr = "!f() { git fetch $1 refs/pull-requests/$2/from:pr-$2; }; f"
