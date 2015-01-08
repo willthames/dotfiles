@@ -1,5 +1,10 @@
-# https://bugzilla.redhat.com/show_bug.cgi?id=878428
-git_completions=/usr/share/git-core/contrib/completion/git-prompt.sh
-[ -f $git_completions ] && . $git_completions
-
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+# Set up history properly
+# http://blog.sanctum.geek.nz/better-bash-history/
+shopt -s histappend
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoredups
+HISTIGNORE='ls:clear:history:vi:pwd:xflock4:git status'
+PROMPT_COMMAND='history -a'
+shopt -s cmdhist
+HISTTIMEFORMAT='%F %T '
