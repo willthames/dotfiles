@@ -5,7 +5,7 @@
 [alias]
   alias = "! git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /' | sort"
   bp = "checkout -"
-  caa = "commit --amend --all --no-edit"
+  caa = "! git commit --amend --all --no-edit --date=\"$(date -R)\""
   cb = "checkout -b"
   co = "checkout"
   follow = "!f() { remote=`git config --get remote.origin.url | sed 's/:[^/]*/:'$1'/'`; git remote add $1 $remote; }; f"
