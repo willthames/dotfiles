@@ -8,6 +8,8 @@
   caa = "! git commit --amend --all --no-edit --date=\"$(date -R)\""
   cb = "checkout -b"
   co = "checkout"
+  cpa = "cherry-pick --abort"
+  cpc = "cherry-pick --continue"
   follow = "!f() { remote=`git config --get remote.origin.url | sed 's/:[^/]*/:'$1'/'`; git remote add $1 $remote; }; f"
   ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
   ra = "rebase --abort"
