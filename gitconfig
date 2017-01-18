@@ -20,3 +20,10 @@
   root = !pwd
   squash = "rebase -i --autosquash"
   stpr = "!f() { git fetch $1 refs/pull-requests/$2/from:pr-$2; }; f"
+
+[tag]
+  sort = version:refname
+
+[branch]
+  autosetuprebase = always
+  autosetupmerge = always
