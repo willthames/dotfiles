@@ -1,17 +1,10 @@
-" NB: https://github.com/gmarik/Vundle.vim/issues/167
 " You may need git config --global core.editor $(which vim)
 
-" vundle relies on
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-
 set history=100
+set laststatus=2
 set nocompatible
 " filetype must be set off before loading bundles
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'wting/rust.vim'
 
 " filetype can be turned on after bundles
 filetype on
