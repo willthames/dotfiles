@@ -1,2 +1,2 @@
-clear Lock
-keysym 0x42 = Escape
+xmodmap -e "clear Lock"
+xmodmap -e "keycode 66 = Escape NoSymbol Escape"
