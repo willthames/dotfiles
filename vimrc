@@ -1,10 +1,34 @@
 " You may need git config --global core.editor $(which vim)
-
 set history=100
 set laststatus=2
 set nocompatible
 " filetype must be set off before loading bundles
 filetype off
+
+
+" set the runtime path for vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" start vundle environment
+call vundle#begin()
+
+" list of plugins
+" let Vundle manage Vundle (this is required)
+"old: Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
+
+" to install a plugin add it here and run :PluginInstall.
+" to update the plugins run :PluginInstall! or :PluginUpdate
+" to delete a plugin remove it here and run :PluginClean
+
+" YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plugin 'nvie/vim-flake8'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+
+" add plugins before this
+call vundle#end()
 
 " filetype can be turned on after bundles
 filetype on
