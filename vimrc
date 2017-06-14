@@ -1,6 +1,8 @@
 " You may need git config --global core.editor $(which vim)
 set history=100
 set laststatus=2
+set list
+set listchars=tab:▶―,trail:␠,nbsp:⎵
 set nocompatible
 " filetype must be set off before loading bundles
 filetype off
