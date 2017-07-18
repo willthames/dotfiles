@@ -27,3 +27,6 @@
 [branch]
   autosetuprebase = always
   autosetupmerge = always
+
+[rebase]
+  instructionFormat = "[%an <%ae>] %ai %s"
