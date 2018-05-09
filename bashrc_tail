@@ -8,3 +8,7 @@ HISTIGNORE='ls:clear:history:vi:pwd:xflock4:git status'
 PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
 shopt -s cmdhist
 HISTTIMEFORMAT='%F %T '
+
+alias k=kubectl
+alias kc="kubectl config"
+alias tf=terraform
