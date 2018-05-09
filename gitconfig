@@ -6,6 +6,7 @@
   alias = "! git config --get-regexp ^alias\\. | sed -e 's/^alias\\.//' -e 's/ / = /' | sort"
   bp = "checkout -"
   br = "for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+  brr = "for-each-ref --sort=committerdate refs/remotes --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
   caa = "! git commit --amend --all --no-edit --date=\"$(date -R)\""
   cb = "checkout -b"
   co = "checkout"
@@ -30,3 +31,5 @@
 
 [rebase]
   instructionFormat = "[%an <%ae>] %ai %s"
+[diff "ansible-vault"]
+  textconv = ansible-vault view
