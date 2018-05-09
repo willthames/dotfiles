@@ -28,6 +28,8 @@ Plugin 'nvie/vim-flake8'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " add plugins before this
 call vundle#end()
