@@ -16,6 +16,7 @@
   fixup = "commit -a --fixup"
   follow = "!f() { remote=`git config --get remote.origin.url | sed 's/:[^/]*/:'$1'/'`; git remote add $1 $remote; }; f"
   ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
+  pushf = "push --force-with-lease"
   ra = "rebase --abort"
   rc = "rebase --continue"
   root = !pwd
