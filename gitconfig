@@ -19,6 +19,7 @@
   pushf = "push --force-with-lease"
   ra = "rebase --abort"
   rc = "rebase --continue"
+  rs = "rebase --skip"
   root = !pwd
   squash = "rebase -i --autosquash"
   stpr = "!f() { git fetch $1 refs/pull-requests/$2/from:pr-$2; }; f"
@@ -32,5 +33,7 @@
 
 [rebase]
   instructionFormat = "[%an <%ae>] %ai %s"
+  autoStash = true
+
 [diff "ansible-vault"]
   textconv = ansible-vault view
