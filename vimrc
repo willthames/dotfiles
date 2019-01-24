@@ -30,6 +30,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'hashivim/vim-terraform'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'w0rp/ale'
 
 " add plugins before this
 call vundle#end()
