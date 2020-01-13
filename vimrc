@@ -75,6 +75,7 @@ endif
 autocmd FileType python set shiftwidth=4
 
 highlight ExtraWhiteSpace ctermbg=red guibg=red
-match ExtraWhiteSpace /\t/
 autocmd InsertEnter * match ExtraWhiteSpace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+autocmd FileType go set shiftwidth=4 tabstop=4 softtabstop=0 noexpandtab nolist
