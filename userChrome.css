@@ -35,16 +35,16 @@
 
 /* Test for Firefox > 66 */
 @supports (inset-block:auto){
-  #tabbrowser-tabs > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox{
+  #tabbrowser-tabs > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox) > .arrowscrollbox-scrollbox{
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
     max-height: calc(var(--tab-min-height_mlt) * var(--tabs-lines));
   }
-  #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+  #tabbrowser-tabs > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox) {
     overflow: -moz-hidden-unscrollable;
     display: block;
-  /*margin-bottom:-1px !important;*/
+	margin-bottom:-1px !important;
   }
 
   :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
@@ -54,7 +54,7 @@
 
 /* Test for Firefox < 66 */
 @supports not (inset-block:auto){
-  #tabbrowser-tabs > .tabbrowser-arrowscrollbox{
+  #tabbrowser-tabs > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox){
     min-height: unset !important;
   }
   #tabbrowser-tabs .scrollbox-innerbox{
@@ -96,9 +96,9 @@
   display: none !important;
 }
 
-#tabbrowser-tabs[overflow="true"] > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
-#tabbrowser-tabs:not([hasadjacentnewtabbutton]) > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
-#TabsToolbar[customizing="true"] #tabbrowser-tabs > .tabbrowser-arrowscrollbox > :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
+#tabbrowser-tabs[overflow="true"] > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox) > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
+#tabbrowser-tabs:not([hasadjacentnewtabbutton]) > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox) > :-moz-any(.tabs-newtab-button,#tabs-newtab-button),
+#TabsToolbar[customizing="true"] #tabbrowser-tabs > :-moz-any(.tabbrowser-arrowscrollbox,#tabbrowser-arrowscrollbox) > :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
   visibility: hidden !important;
 }
 
@@ -144,16 +144,6 @@
   background-repeat: repeat-y !important;
 }
 
-/* tab close - always visible*/
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
-  visibility: visible !important;
-  display: block !important;
-}
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned])[faviconized="true"] .tab-close-button {
-  visibility: collapse !important;
-  display: none !important;
-}
-
 :root:not([customizing]) #navigator-toolbox #TabsToolbar #new-tab-button {
   display: unset !important;
   visibility: visible !important;
@@ -163,16 +153,3 @@
   display: none !important;
   visibility: hidden !important;
 }
-
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
-#TabsToolbar .titlebar-placeholder[type="post-tabs"]{
-  opacity: 0 !important;
-}
-
-#main-window[tabsintitlebar] #TabsToolbar .private-browsing-indicator,
-#main-window[tabsintitlebar] #TabsToolbar #window-controls,
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="pre-tabs"],
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="post-tabs"] {
-  display: none !important;
-}
-
