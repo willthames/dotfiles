@@ -11,7 +11,13 @@ HISTSIZE=2000
 setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
-setopt INC_APPEND_HISTORY
+
+bindkey '\e#' pound-insert
+setopt INTERACTIVE_COMMENTS
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'
+autoload -U select-word-style
+select-word-style bash
 
 # expire duplicates first
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -24,10 +30,12 @@ setopt HIST_REDUCE_BLANKS
 
 
 alias k=kubectl
-alias kc="kubectl config"
 alias tf=terraform
+alias kimg='kubectl get pods -o custom-columns="NAME:.metadata.name,IMAGE:.spec.containers[0].image"'
+alias kdrain='kubectl drain --delete-local-data --ignore-daemonsets'
 
 export GOPATH=~/src/go
+export PATH="${PATH}:${HOME}/.krew/bin"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
@@ -48,3 +56,4 @@ function vscode {
         open -a "Visual Studio Code" "$argPath"
     fi
 }
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
