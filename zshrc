@@ -12,6 +12,7 @@ setopt EXTENDED_HISTORY
 setopt SHARE_HISTORY
 setopt APPEND_HISTORY
 
+bindkey '^R' history-incremental-search-backward
 bindkey '\e#' pound-insert
 setopt INTERACTIVE_COMMENTS
 
@@ -32,10 +33,13 @@ setopt HIST_REDUCE_BLANKS
 alias k=kubectl
 alias tf=terraform
 alias kimg='kubectl get pods -o custom-columns="NAME:.metadata.name,IMAGE:.spec.containers[0].image"'
+alias kpsp='kubectl get pods -o custom-columns="NAME:.metadata.name,PSP:.metadata.annotations.kubernetes\.io/psp"'
 alias kdrain='kubectl drain --delete-local-data --ignore-daemonsets'
 
+
+
 export GOPATH=~/src/go
-export PATH="${PATH}:${HOME}/.krew/bin"
+export PATH="${GOPATH}/bin:${PATH}:${HOME}/.krew/bin"
 
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search

@@ -12,10 +12,14 @@
   co = "checkout"
   cpa = "cherry-pick --abort"
   cpc = "cherry-pick --continue"
+  crp = "! git commit --amend --all --no-edit --date=\"$(date -R)\"; git rev-parse HEAD; git push --force-with-lease origin;"
+  dl = "describe --long"
+  dlt = "describe --long --tags"
   fas = "!f() { git commit -a --fixup=$1; bash -c \"GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash $1^^\"; }; f"
   fixup = "commit -a --fixup"
   follow = "!f() { remote=`git config --get remote.origin.url | sed 's/:[^/]*/:'$1'/'`; git remote add $1 $remote; }; f"
   ghpr = "!f() { git fetch $1 pull/$2/head:pr-$2; }; f"
+  head = "rev-parse HEAD"
   pushf = "push --force-with-lease"
   ra = "rebase --abort"
   rc = "rebase --continue"
@@ -34,3 +38,5 @@
 [rebase]
   instructionFormat = "[%an <%ae>] %ai %s"
   autoStash = true
+[init]
+  defaultBranch = main
