@@ -34,7 +34,7 @@ alias k=kubectl
 alias tf=terraform
 alias kimg='kubectl get pods -o custom-columns="NAME:.metadata.name,IMAGE:.spec.containers[0].image"'
 alias kpsp='kubectl get pods -o custom-columns="NAME:.metadata.name,PSP:.metadata.annotations.kubernetes\.io/psp"'
-alias kdrain='kubectl drain --delete-local-data --ignore-daemonsets'
+alias kdrain='kubectl drain --delete-emptydir-data --ignore-daemonsets'
 
 
 
