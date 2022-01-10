@@ -33,6 +33,7 @@ setopt HIST_REDUCE_BLANKS
 alias k=kubectl
 alias tf=terraform
 alias kimg='kubectl get pods -o custom-columns="NAME:.metadata.name,IMAGE:.spec.containers[0].image"'
+alias king='kubectl get ingresses -o custom-columns="NAMESPACE:.metadata.namespace,NAME:.metadata.name,ANNOTATION:.metadata.annotations.nginx\.ingress\.kubernetes\.io/ingress\.class",CLASS:.spec.ingressClassName,LOADBALANCER:.status.loadBalancer.ingress.\*.hostname'
 alias kpsp='kubectl get pods -o custom-columns="NAME:.metadata.name,PSP:.metadata.annotations.kubernetes\.io/psp"'
 alias kdrain='kubectl drain --delete-emptydir-data --ignore-daemonsets'
 
