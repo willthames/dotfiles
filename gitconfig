@@ -38,5 +38,14 @@
 [rebase]
   instructionFormat = "[%an <%ae>] %ai %s"
   autoStash = true
+
+[pull]
+  rebase = true
+
+[push]
+  autoSetupRemote = true
+
 [init]
   defaultBranch = main
+[core]
+  editor = /usr/bin/vim
